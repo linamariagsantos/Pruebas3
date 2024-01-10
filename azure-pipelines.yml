@@ -6,8 +6,8 @@
       #!/bin/bash
       
       # Definir las URL del repositorio de GitHub y Azure DevOps
-      github_repo_url=https://github.com/linamariagsantos/Pruebas3
-      azure_devops_repo_url=https://dev.azure.com/LMGONZALEZ17/_git/proyecto_repo_azure
+      github_repo_url="https://github.com/linamariagsantos/Pruebas3"
+      azure_devops_repo_url="https://dev.azure.com/LMGONZALEZ17/_git/proyecto_repo_azure"
       
       # Directorio de trabajo temporal
       temp_dir="/ruta/a/un/directorio/temporal"
@@ -57,7 +57,7 @@
       # rm -rf $temp_dir
 # Create and test a Python package on multiple Python versions.
 # Add steps that analyze code, save the dist with the build record, publish to a PyPI-compatible index, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/python
+# "https://docs.microsoft.com/azure/devops/pipelines/languages/python"
 
 trigger:
 - develop
