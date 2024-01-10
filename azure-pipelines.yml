@@ -27,6 +27,34 @@
       
       # Limpieza: Eliminar el directorio temporal si es necesario
       # rm -rf $temp_dir
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      #!/bin/bash
+      
+      # Definir las URL del repositorio de GitHub y Azure DevOps
+      github_repo_url=https://github.com/linamariagsantos/Pruebas3
+      azure_devops_repo_url=https://dev.azure.com/LMGONZALEZ17/_git/proyecto_repo_azure
+      
+      # Directorio de trabajo temporal
+      temp_dir="/ruta/a/un/directorio/temporal"
+      
+      # Clonar el repositorio de GitHub
+      git clone $github_repo_url $temp_dir
+      
+      # Navegar al directorio clonado
+      cd $temp_dir
+      
+      # Configurar el remoto de Azure DevOps
+      git remote add azure $azure_devops_repo_url
+      
+      # Realizar el push al repositorio de Azure DevOps
+      git push azure --all
+      git push azure --tags
+      
+      # Limpieza: Eliminar el directorio temporal si es necesario
+      # rm -rf $temp_dir
 # Create and test a Python package on multiple Python versions.
 # Add steps that analyze code, save the dist with the build record, publish to a PyPI-compatible index, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
